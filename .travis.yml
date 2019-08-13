@@ -1,6 +1,6 @@
 language: node_js
 node_js: 
-  - "8"
+  - "stable"
 scripts:
   - cd server && npm run build
 on:
