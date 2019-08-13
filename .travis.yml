@@ -1,11 +1,11 @@
 language: node_js
 node_js: 
   - "8"
-before_install:
-  - "cd server"
-install:
-  - "npm i"
 script:
+  - "cd server && npm i"
   - "npm test"
+  - "npm build"
+  - "cd ../client && npm i && npm run build"
+  - "cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls"
 on: 
   branch: master

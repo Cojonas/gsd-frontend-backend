@@ -1,4 +1,5 @@
-import app from "./app"
+var app = require("./app")
+
 var http = require('http');
 
 const port = 5000;
