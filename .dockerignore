@@ -1,9 +1,8 @@
-node_modules
-npm-debug.log
+server/node_modules
+server/npm-debug.log
 Dockerfile
 .dockerignore
 
 client/node_modules
 client/npm-debug.log
 client/build
-
