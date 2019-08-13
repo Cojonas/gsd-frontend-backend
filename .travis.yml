@@ -2,8 +2,8 @@ language: node_js
 node_js: 
   - "8"
 install:
-  - npm i
+  - "cd server && npm i"
 script:
   - "cd server && npm test"
-on:
+on: 
   branch: master
