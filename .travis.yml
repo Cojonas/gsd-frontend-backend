@@ -1,7 +1,5 @@
 language: node_js
 node_js: 
   - "stable"
-scripts:
-  - cd server && npm run build
 on:
   branch: master
