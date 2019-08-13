@@ -18,8 +18,7 @@ RUN npm install /app/client --silent
 
 RUN cd /app/client && react-scripts build
 
-
 EXPOSE 5000
 
-CMD [ "npm", "start"]
+CMD [ "node", "server.js"]
 
