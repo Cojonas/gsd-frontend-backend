@@ -8,13 +8,20 @@ class App extends React.Component {
   constructor(props){
     super(props); 
     this.state = {
-      connected: null
+      connected: null, 
+      adb_response: null
     }
+    this.fetchAdbCommand = this.fetchAdbCommand.bind(this)
   }
 
   componentDidMount(){
     fetch("http://localhost:5000/ports")
     .then(response => response.json()).then(data => this.setState(data))
+  }
+
+  fetchAdbCommand(){
+    fetch("http://localhost:5000/commands/adb")
+      .then(response=> response.json()).then(data => this.setState({adb_response: data}))
   }
 
   render() {
@@ -28,6 +35,14 @@ class App extends React.Component {
     } else {
       itsConnected = <p>Not connected:(</p>
     }
+
+    let commandString = ""
+    if (this.state.adb_response){
+      commandString = "" + this.state.adb_response.ok
+      if (this.state.adb_response.stdout){
+        commandString += this.state.adb_response.stdout
+      }
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -36,8 +51,11 @@ class App extends React.Component {
             SerialPort /dev/ttyAMA0: {
               itsConnected
             }
-         
+
+        <button onClick={this.fetchAdbCommand}>Test adb command</button>
+         {commandString}
         </header>
+        
       </div>
     );
   }
