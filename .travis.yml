@@ -1,11 +1,22 @@
+sudo: required
 language: node_js
 node_js: 
   - "8"
+services: docker
 script:
   - "cd server && npm i"
   - "npm test"
   - "npm build"
   - "cd ../client && npm i && npm run build"
   - "cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls"
+build:
+  - docker build -t gsd-frontend-backend
+deploy:
+  provider: releases
+  api_key: "49649d64737929dcd19453658bf7761f59cee910"
+  file: "dockercontainer_image"
+  skip_cleanup: true
+  on:
+    tags: true
 on: 
   branch: master
