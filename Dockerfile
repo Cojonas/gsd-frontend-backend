@@ -1,4 +1,5 @@
-FROM node:8 as build
+FROM node:8
+FROM resin/rpi-raspbian:latest
 
 # create app directory
 WORKDIR /app
@@ -6,8 +7,6 @@ WORKDIR /app
 RUN apt-get -y update && \
       apt-get -y install android-tools-adb
 
-COPY /server/package*.json ./server/
-RUN cd ./server && npm install --silent
 
 COPY . .
 
