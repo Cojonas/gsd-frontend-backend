@@ -14,10 +14,10 @@ script:
 
 deploy:
   provider: releases
-  api_key: "49649d64737929dcd19453658bf7761f59cee910"
+  api_key: 7a3f6c5dca034e597ac68a6d09e5b41d238f0114
   file: "dockercontainer_image"
   skip_cleanup: true
   on:
     tags: true
-on: 
+on:
   branch: master
