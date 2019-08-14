@@ -1,6 +1,11 @@
 language: node_js
+services: 
+  - docker
 node_js: 
   - "8"
+before_install: 
+  - docker build -t gsd-frontend-backend .
+  - docker run -p 5000:5000 gsd-frontend-backend
 script:
   - "cd server && npm i"
   - "npm test"
