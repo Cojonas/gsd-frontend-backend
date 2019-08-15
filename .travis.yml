@@ -1,20 +1,23 @@
 sudo: required
 language: node_js
 node_js:
-  - '8'
+- '8'
 services: docker
 before_install:
-  - docker build -t gsd-frontend-backend .
+- docker build -t gsd-frontend-backend .
 script:
-  - cd server && npm i
-  - npm test
-  - npm build
-  - cd ../client && npm i && npm run build
-  - cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls
+- cd server && npm i
+- npm test
+- npm build
+- cd ../client && npm i && npm run build
+- cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles &&
+  ls
 deploy:
   provider: releases
-  api_key: d793c29d79a03c12407b5087c7826864d6a827bc
+  api_key:
+    secure: BKtR7tc81lJhFhOOA+RRLHxrsWdImzM0fnqvxvPcWYnmVuUkRa53cV4nZSVKgsC84zYbR/eKajkdWvEbIRsiozyDUxXaZUc7IxUXwtU0C0cFK8QzpCIOS44C6GQZjtHaKtNYv1z+WADFwqDGD2+bAmB9B1F5ZFJ+OX1Ldm/01We04zS7lSve+p1pj5Nib32rfI7T/oSB+l2hWeJIe6b4GkeNquxzqG3N2eXJtwAabID5M1aC6XxB7+uMGMtxx/gPhkGuZgnFmx9TxmZreKh1nRzAH5DE2CCw9vRgz34iYR+HweyRvPh0Mtxp74AVrZVKAOTQl2+MSto5/lpgh/95PBXUyNXx9f17srjXtU3r5JEbB3VBg+8iBwHrzWWf/FPiDH43Wt2E3JoZzPtolN3PZkte5ufqKfq+BIsrqTUSS7zpidUTKKQcM9iQuQzC6SWSGz1OkI5URsMJOHxR2RacmCOZnAIrZnmn8ouRP1DJd8D8mgKMq7BurYstGlRdoGZs2/TwpiLYv/Z/7MrJQozDw10ezNtCeSDvok3LczVqMKh0ztOQAwK5udywRKwmJ4o4gYBFD0vvmAhtWTIpI43T5fAZaBAAscizaZ5uEzJ43PMk4OZBx9nPhDJEO28+y6BTE5+FY5brNa3mSmTRPIDapBEvnexyNQqSkQVR6nqZFWc=
   file: dockerimage
   on:
-    tag: 
-      true
+    repo: Cojonas/gsd-frontend-backend
+    branch: master
+    tag: true
