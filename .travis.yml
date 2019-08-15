@@ -10,12 +10,11 @@ script:
 - npm test
 - npm build
 - cd ../client && npm i && npm run build
-- cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles &&
-  ls
+- cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls
 deploy:
   provider: releases
   api_key:
-    secure: VovaUe5YTytHnefRjw/ZpFWQpfJiQi/Qzzw1Om4fT43R0tfZXWjny7XnaeHFKl768/xlmOtEzSY0gHGE/pIxtPsXqK0l0S4Su80OX+r9ImRplfqYPlX9DLYTmFYBWk8FJbBraqQNscrrYCJWVe3NAbUOrdec6YcJZ7tVKf/SDFbFF8ZshB+CuVRJAtpLb20Amz6jj73BW2SI70+UPk85SKGbyX0HOg4wF9BVLcNdFWtSqAkHSGx8jRk94cLIhgCpWdRJ8j6IcdhHjfsNLiXWtuGuKFfivS1Ao1zAeTAQu7Aics9LgiHgl9F8hDdDjReKZYu3RVoAj4P3hAESgl+p5HUygN98qcwQzzWAWJZmjWad2AjykS+9OG2frL0oC/r4Ce7ARGNX9812IuEGXxW3b2xnc42bD97sk0IMTSILQqVwppSenicJw7WOcdI0/xOn5NH2rnix83lZvatKJlNspQy0fGnoiCEY3CBpnmeoSSMCgzQibdbCd1Da7MsXZMd1zqyEP+mbWxPWnOhcrU4ELf1IdRphYjfgeW475U7MVzzM5j5R2lkKSwKLIApMEZCLPLi4DrXaGxSJGih6qUwMi0QzvEL5l8eBGQJLPTP7gTE71LP5f7EMvP1L/xzTCUZw9p8fmwR/xv+AgUc037Hox5fJNeSka1ipi5eBvDQluMY=
+    secure: B3zQGenIxmia0+/IGTUdZLpy2yrbH/EV+gbHr9Y+cSg7XMJCUfFucvaPzlviznYB2uC6cXrZ4IHip9yC0z5GzYyWXcsYNrBzXG2cS8h7OrtG9H5mxvJXarozS2Lkb+k5XckDkfkE+HIKSrNMPJNkVWhDx1Eh3Ip7F9Hw6ZRsbksZwt7KtpD+prVXej/wsH2gyYoLn31uIhFKLtWA7AO6qlQ+4t+H5sQ6GHnJDslw6HUn4Hk9/RGOvKfJq+S5Fu+7ku+TQXOzxnmxdCmLMbgrlQZ+Q314WwOzN4l4r9V/cLzDn9a5fQil5afjscFO5ye/S/iIBOBiKEGbiezokKbd/ztXJiAxlFKTj8THXysxZTLSTaDu+ewYb1p0rI2IXkYYmjdTI5sMv42O1G7quz1ugCC6fgIGcv8WFx85bTVia0Y/SiJshuMb+zxVrU22TnZ7up6RG+rN+QF9eqKFxO14H7nSbcJLYj92jO1VumLbpdaM1OppGbojyo1xYnmmMyVRKUa+1mdf2ZdKD3nTBu1+GEYYoM5H9EqhIsjfFglRGhAgueBSkt2azlDmva/DH7akNlxIQoWyLAF2dJTnh+L/63LC+Nv71dxE5wGS/jUy0AE31j3LjXTmCZIVUWTZcDNAirU0rVYkrdz25KNzOX5jnAvZwdOfduz7zK7k9oePRlI=
   file: dockerimage
   on:
     repo: Cojonas/gsd-frontend-backend
