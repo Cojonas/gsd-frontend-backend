@@ -13,8 +13,7 @@ script:
   - cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls
 deploy:
   provider: releases
-  api_key:
-    secure: "ip9V9TqNfhBYb36JSHcNW88/Uh4di6WFNMgMaSkVjhT2pXw161fVEjRwe76llg5oTYrxUb7c6SMaVSBMp2/yfeO8Ba/soiCO24VNtP61mAgXhN0OBs0lMcWNhFo3B0mT7nOUJ1d8gUL4WddQGxtnr6oK818vrNPL8ZU5p5oeosguw4bSHXEcjdEzK5CL5xT2cai/hfanLJ8faWEIPFAdD3ttYfoCXTls7GTKBP0SKm99QxG3NMz5bCAbIVSEhMbPHs8pEMjOMtoyxkw96OC8YdwcafyFeAOs+h9Rc5+qlhME5MB7FJM4ZqtZYK+H92t+/A4d6PBZ82uLvPTsQ2qgGkMb+3wp/VXReaOHbfPrg0ycMWjasIhpTsiN9BY4tr6gMx2OAhyPMkCz7PGeZwCHLev/jh9azfzQC2JjBZKb76sknQHd/wT9Oe63KQE9h4MDNjc7FocMJcantSbfuIhLptjgbWL3ys3dd2WF1bR/Pv3uw5TrwmzdmpWyOUWjFHDG+7ktvDLMY1ay4RqEcJS3kzuytGDKIN+vnGZeEOKtYMvFqeClIycYXJwhLanLHajcAuuBMx1xLuiGuSGE+sYbg4Bi2oGQhMB8HHkX9FQUCt+8htD0oPCe/prmHB0m9zVL0gRRNi1wTiN7pgUb7/aKZ06eEzt7P1RW8jF36Z1uvNI="
+  api_key: d793c29d79a03c12407b5087c7826864d6a827bc
   file: dockerimage
   on:
     tag: 
