@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Dropzone from 'react-dropzone'
+
+
 class App extends React.Component {
 
 
@@ -54,6 +57,20 @@ class App extends React.Component {
 
         <button onClick={this.fetchAdbCommand}>Test adb command</button>
          {commandString}
+
+
+         <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+  {({getRootProps, getInputProps}) => (
+    <section>
+      <div {...getRootProps()}>
+        <input {...getInputProps()} />
+        <p>Drag 'n' drop some files here, or click to select files</p>
+      </div>
+    </section>
+  )}
+</Dropzone>
+
+
         </header>
         
       </div>
