@@ -17,9 +17,5 @@ deploy:
     secure: fu5Hf6Kf6NfGlDXeKls8OB+FKQ2jIoDYqFHNuAqw8CadWmiCTamLBdlW6HYKraSAdFqVSSI8KPUs+/15b+iKV7SWABPsGHOMmb8dYlJBSqH02pVmuI135DL6+ssIzQlNyA3zEMXQ5vD9GkvJ4izQvXdamqAcvebgs3dVGsrgSJQRS82HT7lVQ3KXzdCVYu2IIYwsdcrppVdRtRRtE3SzLMQ4am8FjtyrIP90G4XVApBTTG3uqax/qTCuXW9Ycwnu04vGS4V2Enm23JIrdCVhK/jud5lwqppfMHNvCMUrYmXFR01QJIqAI6CMpgsdGy0NhO9oy3h/5t5ENbyRdp3k28DCeyIa6AFygwpoMbepO03vimHGU84JKf4FPdVP44CwQC5nFgUwzZLgtFEhvXZBE03aodTIkwNbD+Ncgk15MDo6TjfuptFKitOa4625yx5QrjKWHLPoR/HEaICdiicD1n9A4NbWC85D6s9mC5NEXcYjpxh7QzG4YiHE8drDe1kCvO/3OelZNZCwj5T4q2LVBP4B5iPMHNSvm1/oJxgrcOEBsCnf7nCLZ5D9br4urRvYFfg6GytsPVUWaRGinPvGSwvqY5ch7lQrGk4K75l2xd/zxiWD4stn/kUW8lobKhJwNNeGWgvfFzV5nUn7aWLwJ4vBiGlDYfwt8lub81NBhcg=
   file: dockerimage
   on:
-    repo: Cojonas/gsd-frontend-backend
-    branches:
-      only:
-        - master
-on:
-  branch: master
+    branch: master    
+
