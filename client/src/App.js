@@ -1,18 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import Dropzone from 'react-dropzone'
+import FileUploader from "./components/FileUploader"
 
 
 class App extends React.Component {
-
 
   constructor(props){
     super(props); 
     this.state = {
       connected: null, 
-      adb_response: null
+      adb_response: null, 
+      selectedFile: null
     }
     this.fetchAdbCommand = this.fetchAdbCommand.bind(this)
   }
@@ -26,6 +25,7 @@ class App extends React.Component {
     fetch("http://localhost:5000/commands/adb")
       .then(response=> response.json()).then(data => this.setState({adb_response: data}))
   }
+
 
   render() {
     let itsConnected;
@@ -57,18 +57,8 @@ class App extends React.Component {
 
         <button onClick={this.fetchAdbCommand}>Test adb command</button>
          {commandString}
+        <FileUploader />
 
-
-         <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
-  {({getRootProps, getInputProps}) => (
-    <section>
-      <div {...getRootProps()}>
-        <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
-      </div>
-    </section>
-  )}
-</Dropzone>
 
 
         </header>
