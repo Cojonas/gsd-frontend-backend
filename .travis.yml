@@ -1,24 +1,23 @@
 sudo: required
 language: node_js
-node_js: 
-  - "8"
+node_js:
+- '8'
 services: docker
 before_install:
-  - docker build -t gsd-frontend-backend .
+- docker build -t gsd-frontend-backend .
 script:
-  - "cd server && npm i"
-  - "npm test"
-  - "npm build"
-  - "cd ../client && npm i && npm run build"
-  - "cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls"
-
+- cd server && npm i
+- npm test
+- npm build
+- cd ../client && npm i && npm run build
+- cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles &&
+  ls
 deploy:
   provider: releases
-  api_key: 
-      secure: "RrnGBuxCx3TFYzW/7eVKlN/H8oJssPNn/zk5t/ePAnqCkM49AGHOqK047IZEySKXnqNX0XjkubDjjH+i8QrNcLBh5jsLLGxCc03tw3v01i8cXS7N8bnZmMsqdhltAZguvq+AgpqJsleko69boHdHL0oh9n3Ow4F4zsn6dpP41+by1zzXn2MpJ/WMQvjXGIiXlC0ekW+39pIyW0S4oFb6TXSwadW2Y3BfaDznMkH36kqoAFVgrjM73sLEoXLgJHwvIj4xBqw1OwAlrW0kRYlNDtbQq0k1xRCM1flfsrUQQiYV9E3ry2RZ+u8Bq4RJMe7zqUh5eH65eEQ3zyg1+NiWUzvFflrZr7/oB7NYb4DLBefj3KEDjvgFXyT6ji6BvdSPBU511ZfTZ+kTmeMxQLiP/yWiUQ4ft5OjH8w2dbn5BWvrOgjWW6TzhZCiJw7rQhjG2IlsM3ABHWpI9VE9DAfSkIMCG8RscP90Wmz0mQVp762nQYKXxatx2jdDsUj9rhS+6/71dzBokGV59woVXXm7UxLxpjK9xFIt9jb5qSNQ8xZ33rOjrh9ZhEzZBEhDx44kFWE6PW4Pog6k3Q+JzurJh8MMnwFANv4m34ubpjZSXOcWo7SxiGIejthVK1dlrapo0D/XeOhjVWTcErWYodQklpmWjnxAhTQWGX94B1zfpvU="
-  file: "dockercontainer_image"
-  skip_cleanup: true
+  api_key:
+    secure: fu5Hf6Kf6NfGlDXeKls8OB+FKQ2jIoDYqFHNuAqw8CadWmiCTamLBdlW6HYKraSAdFqVSSI8KPUs+/15b+iKV7SWABPsGHOMmb8dYlJBSqH02pVmuI135DL6+ssIzQlNyA3zEMXQ5vD9GkvJ4izQvXdamqAcvebgs3dVGsrgSJQRS82HT7lVQ3KXzdCVYu2IIYwsdcrppVdRtRRtE3SzLMQ4am8FjtyrIP90G4XVApBTTG3uqax/qTCuXW9Ycwnu04vGS4V2Enm23JIrdCVhK/jud5lwqppfMHNvCMUrYmXFR01QJIqAI6CMpgsdGy0NhO9oy3h/5t5ENbyRdp3k28DCeyIa6AFygwpoMbepO03vimHGU84JKf4FPdVP44CwQC5nFgUwzZLgtFEhvXZBE03aodTIkwNbD+Ncgk15MDo6TjfuptFKitOa4625yx5QrjKWHLPoR/HEaICdiicD1n9A4NbWC85D6s9mC5NEXcYjpxh7QzG4YiHE8drDe1kCvO/3OelZNZCwj5T4q2LVBP4B5iPMHNSvm1/oJxgrcOEBsCnf7nCLZ5D9br4urRvYFfg6GytsPVUWaRGinPvGSwvqY5ch7lQrGk4K75l2xd/zxiWD4stn/kUW8lobKhJwNNeGWgvfFzV5nUn7aWLwJ4vBiGlDYfwt8lub81NBhcg=
+  file: dockerimage
   on:
-    tags: false
-on:
+    repo: Cojonas/gsd-frontend-backend
+true:
   branch: master
