@@ -1,17 +1,16 @@
 sudo: required
 language: node_js
 node_js:
-- '8'
+  - '8'
 services: docker
 before_install:
-- docker build -t gsd-frontend-backend .
+  - docker build -t gsd-frontend-backend .
 script:
-- cd server && npm i
-- npm test
-- npm build
-- cd ../client && npm i && npm run build
-- cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles &&
-  ls
+  - cd server && npm i
+  - npm test
+  - npm build
+  - cd ../client && npm i && npm run build
+  - cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls
 deploy:
   provider: releases
   api_key:
@@ -19,5 +18,8 @@ deploy:
   file: dockerimage
   on:
     repo: Cojonas/gsd-frontend-backend
-true:
+    branches:
+      only:
+        - master
+on:
   branch: master
