@@ -19,6 +19,6 @@ deploy:
   file: "dockercontainer_image"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
 on:
   branch: master
