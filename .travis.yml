@@ -13,7 +13,7 @@ script:
   - npm test
   - npm build
   - cd ../client && npm i && npm run build
-  - cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && ls
+  - cd ../server/public && mkdir appfiles && cp -r ../../client/build/* ./appfiles && cd ../../
 
 deploy:
   provider: releases
