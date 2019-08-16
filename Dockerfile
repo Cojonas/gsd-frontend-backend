@@ -7,6 +7,13 @@ RUN apt-get -y update && \
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 
+WORKDIR /app
+COPY . /app
+
+RUN pwd
+RUN cd server && npm install && cd ../client && npm install
+
+
 RUN sudo mkdir -p /var/lib/docker-shared && sudo chmod -R 0777 /var/lib/docker-shared
 
 RUN [ "cross-build-end" ]
@@ -14,11 +21,8 @@ RUN [ "cross-build-end" ]
 #FROM node:8
 
 # create app directory
-WORKDIR /app
 
-RUN cd server && npm install && cd ../client && npm install
 
-COPY . .
 
 EXPOSE 5000
 
