@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
     var callback = function(isOpen){
 
-        res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000");
+        res.setHeader('Access-Control-Allow-Origin', "*");
 
         res.status(200).json({
             connected: isOpen
