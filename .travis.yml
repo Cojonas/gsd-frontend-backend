@@ -5,8 +5,8 @@ node_js:
 services: docker
 
 
-#script:
-#  - cd server && npm i
+script:
+   - cd server && npm test
 #  - npm test
 #  - npm build
 #  - cd ../client && npm i && npm run build
