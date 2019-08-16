@@ -11,8 +11,6 @@ WORKDIR /app
 COPY . /app
 
 RUN pwd
-RUN cd server && npm install && cd ../client && npm install
-
 
 RUN sudo mkdir -p /var/lib/docker-shared && sudo chmod -R 0777 /var/lib/docker-shared
 
