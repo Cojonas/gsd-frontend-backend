@@ -6,7 +6,7 @@ services: docker
 
 
 script:
-   - cd server && npm test
+   - cd server
 #  - npm test
 #  - npm build
 #  - cd ../client && npm i && npm run build
