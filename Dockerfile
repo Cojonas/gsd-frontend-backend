@@ -1,4 +1,4 @@
-FROM balenalib/armv7hf-debian
+FROM hypriot/rpi-node:8.1.3
 
 RUN [ "cross-build-start" ]
 RUN apt-get -y update && \
@@ -12,7 +12,7 @@ RUN sudo mkdir -p /var/lib/docker-shared && sudo chmod -R 0777 /var/lib/docker-s
 
 RUN [ "cross-build-end" ]
 
-FROM node:8
+#FROM node:8
 
 # create app directory
 WORKDIR /app
