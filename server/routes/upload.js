@@ -26,7 +26,6 @@ router.post('/',function(req, res) {
             return res.status(500).json(err)
         }
         return res.status(200).send(req.file)
-
     })
 });
 

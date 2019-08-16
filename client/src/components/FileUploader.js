@@ -9,14 +9,12 @@ class FileUploader extends React.Component {
             selectedFile: null
         }
         this.onClickHandler = this.onClickHandler.bind(this)
-
         this.onChangeHandler = this.onChangeHandler.bind(this)
     }
     onChangeHandler(event){
         this.setState({
           selectedFile: event.target.files[0]
         })
-        console.log(this.state.selectedFile)
 
       }
     onClickHandler() {
@@ -28,8 +26,11 @@ class FileUploader extends React.Component {
         })
         .then(res => { // then print response status
             console.log(res.statusText)
-        })
-
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+          })
+         
     }
     
 
