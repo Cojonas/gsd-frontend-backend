@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
     cb(null, sharedFolder)
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' +file.originalname )
+    cb(null,file.originalname )
   }
 })
 
