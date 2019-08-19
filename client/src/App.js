@@ -16,12 +16,12 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    fetch("http://localhost:5000/ports")
+    fetch("/ports")
     .then(response => response.json()).then(data => this.setState(data))
   }
 
   fetchAdbCommand(){
-    fetch("http://localhost:5000/commands/adb")
+    fetch("/commands/adb")
       .then(response=> response.json()).then(data => this.setState({adb_response: data}))
   }
 
