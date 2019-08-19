@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const fs = require("fs")
 
 var multer = require('multer')
 
@@ -20,6 +21,19 @@ var upload = multer({ storage: storage }).single('file')
 router.post('/',function(req, res) {
      
     upload(req, res, function (err) {
+
+      try {
+
+        var filename = sharedFolder + "/" + req.file.originalname;
+        console.log(filename);
+        if (fs.existsSync(sharedFolder + "/" + req.file.originalname)) console.log("file exists")
+        
+      } catch(err) {
+        console.error(err)
+      }
+
+      
+
       res.setHeader('Access-Control-Allow-Origin', "*");
 
         if (err instanceof multer.MulterError) {
@@ -30,6 +44,9 @@ router.post('/',function(req, res) {
 
         return res.status(200).send(req.file)
     })
+
+    
+
 });
 
 module.exports = router;

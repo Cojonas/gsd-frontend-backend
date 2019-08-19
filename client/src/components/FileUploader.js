@@ -22,7 +22,7 @@ class FileUploader extends React.Component {
         console.log(this.state.selectedFile)
         data.append('file', this.state.selectedFile)
         console.log(data.get("file"))
-        axios.post("/upload", data, { // receive two parameter endpoint url ,form data 
+        axios.post("http://localhost:5000/upload", data, { // receive two parameter endpoint url ,form data 
         })
         .then(res => { // then print response status
             console.log(res.statusText)
