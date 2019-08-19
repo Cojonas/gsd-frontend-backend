@@ -17,20 +17,14 @@ COPY server/package.json /app/server/
 RUN cd /app/server && npm install
 COPY server /app/client
 
-RUN pwd
-RUN ls 
+COPY . .
 
-
-RUN pwd
 
 RUN sudo mkdir -p /var/lib/docker-shared && sudo chmod -R 0777 /var/lib/docker-shared
 
 RUN [ "cross-build-end" ]
 
 #FROM node:8
-
-# create app directory
-
 
 
 EXPOSE 5000
