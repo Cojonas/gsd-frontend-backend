@@ -8,7 +8,6 @@ RUN apt-get -y update && \
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
-RUN [ "cross-build-end" ]
 
 #WORKDIR /app
 
@@ -35,10 +34,7 @@ RUN mkdir -p /app/docker-shared
 #RUN sudo mkdir -p /var/lib/docker-shared && sudo chmod -R 0777 /var/lib/docker-shared
 
 
-
-RUN pwd
-RUN ls
-
+RUN [ "cross-build-end" ]
 
 EXPOSE 5000
 
