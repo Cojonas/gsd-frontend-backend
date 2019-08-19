@@ -9,13 +9,13 @@ RUN apt-get -y update && \
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 
-#WORKDIR /app
+WORKDIR /app
 
 #install and build client 
 COPY client/package.json /app/client/
 RUN cd /app/client && npm install --silent
 COPY client /app/client
-RUN rm -Rf /app/client/build &&  cd /app/client && npm run build
+RUN rm -Rf /app/client/dist/* &&  cd /app/client && npm run build
 
 
 
@@ -27,7 +27,7 @@ COPY server /app/server
 
 # copy client build files to public server folder
 RUN mkdir -p /app/server/public/appfiles
-RUN rm -Rf /app/server/public/appfiles/* && cp -R /app/client/build/* /app/server/public/appfiles/
+RUN rm -Rf /app/server/public/appfiles/* && cp -R /app/client/dist/* /app/server/public/appfiles/
 
 
 RUN mkdir -p /app/docker-shared
