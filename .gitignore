@@ -5,3 +5,7 @@ client/node_modules
 server/node_modules
 server/build
 server/public/appfiles
+
+gsd-releases/dist
+gsd-releases/.vscode
+gsd-releases/node_modules
