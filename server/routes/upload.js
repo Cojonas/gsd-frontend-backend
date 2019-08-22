@@ -24,9 +24,9 @@ router.post('/',function(req, res) {
 
       try {
 
-        var filename = sharedFolder + "/" + req.file.originalname;
+        var filename = sharedFolder + "/"  + req.file.originalname;
         console.log(filename);
-        if (fs.existsSync(sharedFolder + "/" + req.file.originalname)) console.log("file exists")
+        if (fs.existsSync(filename)) console.log("file exists")
         
       } catch(err) {
         console.error(err)

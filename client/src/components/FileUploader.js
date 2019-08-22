@@ -21,8 +21,11 @@ class FileUploader extends React.Component {
         const data = new FormData() 
         console.log(this.state.selectedFile)
         data.append('file', this.state.selectedFile)
-        console.log(data.get("file"))
-        axios.post("/upload", data, { // receive two parameter endpoint url ,form data 
+        axios.post("/upload", data, { 
+            onUploadProgress: progressEvent => {
+                var percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+                console.log(percentCompleted)
+            }
         })
         .then(res => { // then print response status
             console.log(res.statusText)
@@ -30,16 +33,15 @@ class FileUploader extends React.Component {
             // handle error
             console.log(error);
           })
-         
     }
     
 
     render() {
         return        <> 
 
-        <input type="file" name="file" onChange={this.onChangeHandler} />
+            <input type="file" name="file" onChange={this.onChangeHandler} />
 
-        <button type="button" onClick={this.onClickHandler}>Upload</button>
+            <button type="button" onClick={this.onClickHandler}>Upload</button>
 
     </>
 
