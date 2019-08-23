@@ -14,7 +14,7 @@ const { Header, Footer, Content } = Layout;
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   headers :  {
-    "Authorization": "token f8dbf8ca385b390298932d1a48cd408e304e7564"
+    "Authorization": "token 01afaed86084b30c47ef041af4b22d51db1eba21"
   }
 });
 
